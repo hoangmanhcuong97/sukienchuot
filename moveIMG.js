@@ -1,4 +1,4 @@
-let nhanvat = 10;
+let nhanvat = null;
 function init(){
   nhanvat = document.getElementById("contra");
   nhanvat.style.position = "relative";
