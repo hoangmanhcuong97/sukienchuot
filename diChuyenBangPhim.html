@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>di chuyen bang ban phim</title>
+</head>
+<body onload="docsukien()"><!--Hàm gọi ra hàm lúc tải trang web-->
+<!--Chỉ ra đường dẫn ảnh và định vị vị trí ban đầu ảnh-->
+       <img id="contra1" src="img/contra.PNG" style="position: absolute;left:100px;top:100px" height="75" width="60"/>
+<script>
+  //Hàm di chuyen len tren
+function dichuyenlentren(){
+  let tren = document.getElementById("contra1");
+  tren.style.top = parseInt(tren.style.top) + 20 + "px";
+}
+  //Hàm di chuyen xuong duoi
+function dichuyenxuongduoi(){
+  let tren = document.getElementById("contra1");
+  tren.style.top = parseInt(tren.style.top) - 20 + "px";
+}
+  //Hàm di chuyển sang phải
+function dichuyensangphai(){
+  let tren = document.getElementById("contra1");
+  tren.style.left = parseInt(tren.style.left) + 20 + "px";
+}
+  //Hàm di chuyển sang trái
+function dichuyensangtrai(){
+  let tren = document.getElementById("contra1");
+  tren.style.left = parseInt(tren.style.left) - 20 + "px";
+}
+   //Hàm chỉ định nút trên bàn phím để thực hiện sự kiện
+function dichuyen(move){
+  switch (move.keyCode){
+    case 37:
+      dichuyensangtrai();
+      break;
+    case 39:
+      dichuyensangphai();
+      break;
+    case 38:
+      dichuyenxuongduoi();
+      break;
+    case 40:
+      dichuyenlentren();
+      break;
+  }
+}
+  //Hàm cách thức tác động vào sự kiên
+function docsukien(){
+  window.addEventListener("keydown",dichuyen);
+}
+</script>
+</body>
+</html>
